@@ -1,10 +1,9 @@
 #!/usr/bin/env python3*
-from Word import Word
+from Text import Text
 
 def main():
-    test = Word("pamplemousse1")
-    print(test.color)
-    print(test.text)
+    textObj = Text(text="Le : petit Prince est le deuxième livre le plus traduit au monde.")
+    print(textObj.colors)
 
 if __name__ == '__main__':
     main()
