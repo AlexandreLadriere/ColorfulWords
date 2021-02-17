@@ -2,6 +2,11 @@
 from Word import Word
 
 class Text:
+    
+    # text: text String (optional)
+    # textPath: Path of the .txt file (optional)
+    # colors: List of pixel color value, where each value represent the color of a word
+    
     def __init__(self, text="", textPath=""):
         self.text = text
         self.textPath = textPath
@@ -13,14 +18,10 @@ class Text:
     
     @property
     def colors(self):
-        # split text
-        # create Word object for each word
-        # add word color to list
         colors = []
         splittedText = self.text.split(" ")
         for word in splittedText:
-            # check if ponctuation
-            print("word = " + word)
             currentWord = Word(word)
-            colors.append(currentWord.color)
+            if currentWord.formatedText != "": # Check if word is not a separate punctuation symbol for example
+                colors.append(currentWord.color)
         return colors
