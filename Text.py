@@ -16,9 +16,6 @@ class Text:
     def __loadText(self):
         pass
     
-    def saveTextToImage(self, imagePath, extension=".png", dimX="2000", dimY="2000"):
-        pass
-    
     @property
     def colors(self):
         colors = []
