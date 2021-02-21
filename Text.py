@@ -11,10 +11,16 @@ class Text:
         self.text = text
         self.textPath = textPath
         if textPath != "":
-            self.__loadText()
+            self.__loadText(textPath)
             
-    def __loadText(self):
-        pass
+    def __loadText(self, textPath):
+        if textPath.endswith(".txt"):
+            with open(textPath, 'r') as f:
+                fileText = f.read()
+                fileText = fileText.replace("\n", " ")
+                fileText = fileText.replace("\r", " ")
+                self.text = fileText
+        return        
     
     @property
     def colors(self):

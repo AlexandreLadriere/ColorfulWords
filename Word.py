@@ -27,4 +27,6 @@ class Word:
         uniText = ''.join(e for e in self.text if e.isalnum()) # remove punctuation
         uniText = ''.join(c for c in unicodedata.normalize('NFD', uniText)
                   if unicodedata.category(c) != 'Mn') # Remove accents and other special letter chars
+        uniText = uniText.replace("œ", "oe")
+        uniText = uniText.replace("ª", "a")
         return uniText

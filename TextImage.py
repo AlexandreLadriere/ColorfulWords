@@ -21,7 +21,8 @@ class TextImage:
         squareNumY = 0
         squareSize = self.__getSquareSideLength(dimX)
         borderRatio = squareSize / 10
-        for color in self.text.colors:
+        colorList = self.text.colors
+        for color in colorList:
             upperLeftX = squareNumX * squareSize + borderRatio
             upperLeftY = squareNumY * squareSize + borderRatio
             lowerRightX = (squareNumX + 1) * squareSize - borderRatio
