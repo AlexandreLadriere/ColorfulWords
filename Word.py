@@ -5,7 +5,7 @@ class Word:
     
     # text: word text
     # formatedText: word text without accent, punctuation, etc
-    # color: pixel color value for the word - [0;255]
+    # color: pixel color values in rgb for the word - eg: [0, 255, 56]
     
     def __init__(self, text):
         self.text = text
@@ -21,7 +21,7 @@ class Word:
                 colorValue += int(letter)
             else:
                 colorValue += alphaPos[letter.lower()]
-        return colorValue % 256
+        return [(colorValue * len(self.formatedText)) % 256, (colorValue * 2) % 256, (colorValue * 3 % 256)]
     
     def __formatText(self):
         uniText = ''.join(e for e in self.text if e.isalnum()) # remove punctuation

@@ -23,5 +23,5 @@ class Text:
         for word in splittedText:
             currentWord = Word(word)
             if currentWord.formatedText != "": # Check if word is not a separate punctuation symbol for example
-                colors.append([currentWord.color, currentWord.color, currentWord.color])
+                colors.append(currentWord.color)
         return colors
