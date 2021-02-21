@@ -10,11 +10,11 @@ class TextImage:
     def __init__(self, text):
         self.text = text
         
-        
-    def save(self, imagePath, extension=".png", dimX="2000"):
-        pass
+    def save(self, imagePath, imageName="", extension=".png", dimX=2000):
+        imgToSave = self.__draw(dimX)
+        imgToSave.save(imagePath + imageName + extension)
     
-    def draw(self, dimX):
+    def __draw(self, dimX):
         img = Image.new('RGB', (dimX, dimX), color='white')
         draw = ImageDraw.Draw(img)
         squareNumX = 0
@@ -31,7 +31,7 @@ class TextImage:
             if squareNumX == self.__getGridSize():
                 squareNumX = 0
                 squareNumY += 1
-        img.save("./test.png")
+        return img
             
     
     def __getGridSize(self):
