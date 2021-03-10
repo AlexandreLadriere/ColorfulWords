@@ -1,12 +1,13 @@
 #!/usr/bin/env python3*
+import argparse
 from Text import Text
 from TextImage import TextImage
 
 def main(text_path, text_string, image_path, image_name, image_format, image_size):
-    if textPath != '':
+    if text_path != '':
         textObj = Text(textPath=text_path)
     else:
-        textobj = Text(text=text_string)
+        textObj = Text(text=text_string)
     textImg = TextImage(textObj)
     textImg.save(image_path, imageName=image_name, extension=image_format, dimX=image_size)
 
@@ -40,13 +41,13 @@ if __name__ == '__main__':
                         '--image_format',
                         type=str,
                         required=False,
-                        default='png'
+                        default='png',
                         help='Format (str) of the image you want to save')
     parser.add_argument('-is',
                         '--image_size',
                         type=int,
                         required=False,
-                        default=2000
+                        default=2000,
                         help='Size (int) in pixels of the image you want to save')
     args = parser.parse_args()
     main(args.text_path, args.text_string, args.image_path, args.image_name, args.image_format, args.image_size)
