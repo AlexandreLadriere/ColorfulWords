@@ -24,7 +24,7 @@ class TextImage:
         """
         self.text = text
         
-    def save(self, imagePath, imageName="", extension=".png", dimX=2000):
+    def save(self, imagePath, imageName="", extension="png", dimX=2000):
         """
         Save the image object according to the given parameters
         
@@ -40,7 +40,7 @@ class TextImage:
             Dimension, in pixels, of the side of the image
         """
         imgToSave = self.__draw(dimX)
-        imgToSave.save(imagePath + imageName + extension)
+        imgToSave.save(imagePath + imageName + "." + extension)
     
     def __draw(self, dimX):
         """
