@@ -1,4 +1,4 @@
-#!/usr/bin/env python3*
+#!/usr/bin/env python3.9
 import argparse
 from Text import Text
 from TextImage import TextImage
@@ -8,6 +8,7 @@ def main(text_path, text_string, image_path, image_name, image_format, image_siz
         textObj = Text(textPath=text_path)
     else:
         textObj = Text(text=text_string)
+    textObj.colors
     textImg = TextImage(textObj)
     textImg.save(image_path, imageName=image_name, extension=image_format, dimX=image_size)
 
